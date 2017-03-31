@@ -1,4 +1,4 @@
-FROM infonova/mesos:1.2.0-docker-1.12.6
+FROM infonova/mesos:devel
 MAINTAINER Infonova <stefan.eder@infonova.com>
 
 ENTRYPOINT ["/usr/libexec/mesos/mesos-fetcher"]
