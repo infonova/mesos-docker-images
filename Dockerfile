@@ -3,8 +3,8 @@ MAINTAINER Bearingpoint
 
 ENV UBUNTU_VERSION trusty
 
-ENV MESOS_VERSION_SHORT 1.3.0
-ENV MESOS_VERSION_FULL $MESOS_VERSION_SHORT-2.0.3
+ENV MESOS_VERSION_SHORT 1.2.2
+ENV MESOS_VERSION_FULL $MESOS_VERSION_SHORT-2.0.1
 
 RUN echo "deb http://repos.mesosphere.io/ubuntu/ $UBUNTU_VERSION main" > /etc/apt/sources.list.d/mesosphere.list && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
