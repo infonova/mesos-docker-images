@@ -1,4 +1,4 @@
 FROM infonova/mesos:devel
-MAINTAINER Infonova <stefan.eder@infonova.com>
+MAINTAINER Bearingpoint
 
 ENTRYPOINT ["/usr/libexec/mesos/mesos-fetcher"]

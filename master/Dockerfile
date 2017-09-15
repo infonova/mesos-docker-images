@@ -1,5 +1,5 @@
 FROM infonova/mesos:devel
-MAINTAINER Infonova <stefan.eder@infonova.com>
+MAINTAINER Bearingpoint
 
 CMD ["--registry=in_memory"]
 ENTRYPOINT ["mesos-master"]
