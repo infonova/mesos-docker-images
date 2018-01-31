@@ -1,14 +1,26 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Bearingpoint
 
-ENV DOCKER_VERSION_SHORT 1.12.6
-ENV DOCKER_VERSION_FULL $DOCKER_VERSION_SHORT-0~ubuntu-trusty
-ENV UBUNTU_VERSION trusty
+ENV DOCKER_VERSION_SHORT 17.09.0
+ENV DOCKER_VERSION_FULL $DOCKER_VERSION_SHORT~ce-0~ubuntu
 
-RUN apt-get update && \
-  apt-get -y install apt-transport-https ca-certificates && \
-  apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
-  echo "deb https://apt.dockerproject.org/repo ubuntu-$UBUNTU_VERSION main" > /etc/apt/sources.list.d/docker.list && \
-  apt-get update && \
-  apt-get -y install docker-engine=$DOCKER_VERSION_FULL && \
-  apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update  && \
+    \
+    apt-get install -y \
+      apt-transport-https \
+      ca-certificates \
+      curl \
+      software-properties-common  && \
+    \
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -  && \
+    \
+    add-apt-repository -y \
+      "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) \
+      stable"  && \
+    \
+    apt-get update  && \
+    \
+    apt-get -y install docker-ce=$DOCKER_VERSION_FULL  && \
+    \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
