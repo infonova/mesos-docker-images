@@ -1,4 +1,4 @@
-FROM infonova/mesos:1.4.1-docker-17.09.0-ce
+FROM infonova/mesos:devel
 MAINTAINER Bearingpoint
 
 CMD ["--registry=in_memory"]
