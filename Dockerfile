@@ -1,4 +1,4 @@
-FROM infonova/mesos-docker-base:17.09.0-ce
+FROM infonova/mesos-docker-base:18.03.1-ce
 MAINTAINER Bearingpoint
 
 ARG UBUNTU_CODENAME=xenial
